@@ -512,6 +512,96 @@
 
     </section>
 
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podgląd Fragmentu - Obliczenia Powierzchni</title>
+    <style>
+        /* Proste style podglądu symulujące Twoją stronę */
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 40px 20px; 
+            color: #000; 
+            background: #fff; 
+            max-width: 900px; 
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
 
+<div style="margin-top: 40px;">
+    
+    <h3 style="font-size: 1.1em; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+        4. Obliczenia wymaganej powierzchni składowiska odpadów
+    </h3>
+
+    <p style="font-size: 0.85em; text-align: justify; line-height: 1.5; margin-bottom: 15px;">
+        Na podstawie danych zawartych w <strong>Tabeli 12</strong> (prognozowane objętości odpadów zmieszanych) oraz wytycznych projektowych, przeprowadzono obliczenia wymaganej powierzchni składowiska. Zastosowano poniższy wzór:
+    </p>
+
+    <!-- Wzór matematyczny -->
+    <div style="text-align: center; margin: 30px 0; font-size: 1.2em; font-family: 'Times New Roman', Times, serif;">
+        <i>p</i> =
+        <span style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 8px;">
+            <span style="border-bottom: 1px solid #000; display: block; padding: 0 10px; margin-bottom: 3px;"><i>V<sub>odp</sub></i> &middot; <i>t</i> &middot; <i>K<sub>c</sub></i></span>
+            <span style="display: block; padding: 0 10px;"><i>h</i> &middot; <i>K<sub>z</sub></i> &middot; 10<sup>4</sup></span>
+        </span>
+        [ha]
+    </div>
+
+    <p style="font-size: 0.85em; text-align: justify; line-height: 1.5; margin-bottom: 15px;">
+        <strong>Gdzie:</strong><br>
+        <strong>V<sub>odp</sub></strong> – nagromadzenie odpadów w m&sup3;/rok średnio dla roku środkowego (przyjęto średnią dla lat 2040 i 2045),<br>
+        <strong>h</strong> – całkowita wysokość złoża składowanych odpadów [m],<br>
+        <strong>t</strong> – okres obliczeniowy (eksploatacji składowiska) [lata],<br>
+        <strong>K<sub>c</sub></strong> – współczynnik zapotrzebowania powierzchni całkowitej,<br>
+        <strong>K<sub>z</sub></strong> – współczynnik zagęszczenia odpadów na składowisku.
+    </p>
+
+    <p style="font-size: 0.85em; text-align: justify; line-height: 1.5; margin-bottom: 30px;">
+        <strong>Przyjęte założenia obliczeniowe:</strong><br>
+        <span style="display: block; margin-left: 15px; margin-top: 5px;">&bull; <strong>V<sub>odp</sub></strong> = (4 212,36 + 4 317,67) / 2 = <strong>4 265,02 m&sup3;/rok</strong></span>
+        <span style="display: block; margin-left: 15px;">&bull; <strong>t</strong> = <strong>35 lat</strong> (okres obliczeniowy 2025&ndash;2060)</span>
+        <span style="display: block; margin-left: 15px;">&bull; <strong>h</strong> = <strong>10 m</strong> (standardowe założenie projektowe)</span>
+        <span style="display: block; margin-left: 15px;">&bull; <strong>K<sub>c</sub></strong> = <strong>1,5</strong> (założenie optymalne z zalecanego przedziału)</span>
+    </p>
+
+    <p style="font-size: 0.85em; font-weight: bold; margin-bottom: 10px;">
+        Tabela 13. Wymagana powierzchnia składowiska (p) w zależności od technologii zagęszczania
+    </p>
+    
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.8em; text-align: center; margin-bottom: 40px; border: 1px solid #000;">
+        <thead>
+            <tr style="background-color: #f5f5f5;">
+                <th style="border: 1px solid #000; padding: 10px;">Metoda zagęszczania odpadów</th>
+                <th style="border: 1px solid #000; padding: 10px;">Współczynnik zagęszczenia (K<sub>z</sub>)</th>
+                <th style="border: 1px solid #000; padding: 10px;">Wymagana powierzchnia (p) [ha]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border: 1px solid #000; padding: 8px; text-align: left; padding-left: 15px;">Naturalne osiadanie</td>
+                <td style="border: 1px solid #000; padding: 8px;">1,5</td>
+                <td style="border: 1px solid #000; padding: 8px;"><strong>1,49</strong></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 8px; text-align: left; padding-left: 15px;">Zagęszczanie spycharką</td>
+                <td style="border: 1px solid #000; padding: 8px;">2,5</td>
+                <td style="border: 1px solid #000; padding: 8px;"><strong>0,90</strong></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000; padding: 8px; text-align: left; padding-left: 15px;">Zagęszczanie kompaktorem</td>
+                <td style="border: 1px solid #000; padding: 8px;">3,5</td>
+                <td style="border: 1px solid #000; padding: 8px;"><strong>0,64</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+    
 </body>
 </html>
