@@ -687,37 +687,6 @@
 
     </section>
 
-    <!-- Skrypt generujący wykres -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('biogasChart').getContext('2d');
-            
-            // Konfiguracja osi X (lata od 0 do 85)
-            const labels = [];
-            const potentialData = [];
-            const actualData = [];
-            
-            const G_potencjalna = 72.81; // Zaktualizowana wartość dla Corg = 87
-            const k = 0.22; // Współczynnik kinetyki (dobrany do kształtu z projektu)
-            const t0 = 18;  // Punkt przegięcia krzywej logistycznej (ok 18-20 lat)
-
-            for (let t = 0; t <= 85; t += 5) {
-                labels.push(t);
-                
-                // Stała linia dla produkcji potencjalnej
-                potentialData.push(G_potencjalna);
-                
-                // Obliczanie krzywej logistycznej dla produkcji rzeczywistej
-                // F(t) = G / (1 + e^(-k*(t-t0)))
-                let G_rzeczywista = G_potencjalna / (1 + Math.exp(-k * (t - t0)));
-                
-                // Sztuczne "przyklejenie" początkowych wartości bliżej zera dla naturalnego wygładzenia początku krzywej
-                if (t === 0) G_rzeczywista = 0;
-                if (t === 5) G_rzeczywista = 1.0;
-
-                actualData.push(G_rzeczywista);
-            }
-
  </body>
  </html>
                                   
