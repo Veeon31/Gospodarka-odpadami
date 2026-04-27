@@ -645,9 +645,194 @@
         </div>
 
     </section>
+    <!-- NOWA SEKCJA 6 NA PODSTAWIE ZDJĘĆ Z WZORAMI I WYKRESEM -->
+    <section>
+        <h2>6. Obliczenia produkcji biogazu składowiskowego</h2>
+        
+        <h3>6.1. Produkcja potencjalna biogazu</h3>
+        <p>W celu oceny przydatności składowiska pod kątem energetycznym, oszacowano potencjalną produkcję biogazu ($G$) na podstawie zawartości węgla organicznego. Zastosowano poniższy wzór obliczeniowy:</p>
+
+        <div class="formula-box">
+            G = 1,868 &middot; C<sub>org</sub> &middot; [0,014 &middot; (T &ndash; 273) + 0,28] &nbsp; [m&sup3;/Mg]
+        </div>
+
+        <p><strong>Objaśnienia symboli:</strong></p>
+        <ul class="var-desc">
+            <li><strong>1,868</strong> &ndash; ilość biogazu (złożonego z metanu i dwutlenku węgla), powstającego z 1 kilograma węgla organicznego [m&sup3;/kg C<sub>org</sub>],</li>
+            <li><strong>C<sub>org</sub></strong> &ndash; zawartość węgla organicznego w zdeponowanych odpadach [kg/Mg odpadów],</li>
+            <li><strong>T</strong> &ndash; temperatura fermentacji wewnątrz złoża [K] (zakres 283-288 K).</li>
+        </ul>
+
+        <p><strong>Założenia do obliczeń projektowych dla Gminy Kleszczów:</strong></p>
+        <ul class="var-desc">
+            <li>Zgodnie z rzeczywistymi danymi dla rozpatrywanego projektu, przyjęto zawartość węgla organicznego na poziomie: <strong>C<sub>org</sub> = 87 kg/Mg</strong>.</li>
+            <li>Do obliczeń wytypowano uśrednioną, optymalną temperaturę procesu z zadanego przedziału: <strong>T = 285 K</strong> (ok. 12 &deg;C).</li>
+        </ul>
+
+        <p><strong>Przebieg obliczeń:</strong></p>
+        <p style="margin-left: 20px; font-family: 'Times New Roman', Times, serif; font-size: 1.1em;">
+            G = 1,868 &middot; 87 &middot; [0,014 &middot; (285 &ndash; 273) + 0,28] <br><br>
+            G = 162,52 &middot; [0,014 &middot; 12 + 0,28] <br><br>
+            G = 162,52 &middot; [0,168 + 0,28] = 162,52 &middot; 0,448 = <strong>72,81 m&sup3;/Mg</strong>
+        </p>
+        <p>Potencjalna produkcja biogazu dla zadanego strumienia i właściwości odpadów wynosi <strong>~72,8 m&sup3;/Mg</strong>.</p>
+
+        <h3>6.2. Skumulowany wykres rzeczywistej produkcji biogazu</h3>
+        <p>Proces powstawania biogazu ma charakter kinetyczny. Rzeczywista skumulowana produkcja początkowo rośnie powoli, następnie gwałtownie przyspiesza i z biegiem lat (po kilkudziesięciu latach eksploatacji i rekultywacji złoża) zbliża się asymptotycznie do wyliczonej wartości produkcji potencjalnej. Dynamikę tę (modelowaną przy pomocy funkcji logistycznej S-kształtnej) obrazuje poniższy wykres.</p>
+
+        <!-- Kontener na wykres Chart.js -->
+        <div class="chart-container">
+            <canvas id="biogasChart"></canvas>
+        </div>
+
+    </section>
+
+    <!-- Skrypt generujący wykres -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('biogasChart').getContext('2d');
+            
+            // Konfiguracja osi X (lata od 0 do 85)
+            const labels = [];
+            const potentialData = [];
+            const actualData = [];
+            
+            const G_potencjalna = 72.81; // Zaktualizowana wartość dla Corg = 87
+            const k = 0.22; // Współczynnik kinetyki (dobrany do kształtu z projektu)
+            const t0 = 18;  // Punkt przegięcia krzywej logistycznej (ok 18-20 lat)
+
+            for (let t = 0; t <= 85; t += 5) {
+                labels.push(t);
+                
+                // Stała linia dla produkcji potencjalnej
+                potentialData.push(G_potencjalna);
+                
+                // Obliczanie krzywej logistycznej dla produkcji rzeczywistej
+                // F(t) = G / (1 + e^(-k*(t-t0)))
+                let G_rzeczywista = G_potencjalna / (1 + Math.exp(-k * (t - t0)));
+                
+                // Sztuczne "przyklejenie" początkowych wartości bliżej zera dla naturalnego wygładzenia początku krzywej
+                if (t === 0) G_rzeczywista = 0;
+                if (t === 5) G_rzeczywista = 1.0;
+
+                actualData.push(G_rzeczywista);
+            }
+
+            // Tworzenie wykresu Chart.js
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Produkcja potencjalna',
+                            data: potentialData,
+                            borderColor: '#800000', // Ciemny bordowy/brązowy ze zdjęcia
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            fill: false,
+                            tension: 0
+                        },
+                        {
+                            label: 'Produkcja rzeczywista',
+                            data: actualData,
+                            borderColor: '#4B6CA8', // Przytłumiony niebieski ze zdjęcia
+                            borderWidth: 3,
+                            pointRadius: 0, // Ukrycie kropek, żeby była ciągła linia
+                            fill: false,
+                            tension: 0.4 // Zakrzywienie S-kształtne
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index',
+                    },
+                    plugins: {
+                        legend: {
+                            display: false // Zgodnie ze zdjęciem, legendy są tekstami nad krzywymi
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' m³/Mg';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'czas [lata]',
+                                font: { weight: 'bold', size: 14, family: 'Arial' },
+                                color: '#000'
+                            },
+                            grid: {
+                                color: '#000',
+                                drawOnChartArea: false, // Linie zębów widoczne tylko na osi (jak na zdjęciu)
+                                tickLength: 8,
+                                tickWidth: 1
+                            },
+                            border: {
+                                color: '#000',
+                                width: 1
+                            },
+                            ticks: {
+                                color: '#000',
+                                font: { size: 12, weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'm³/Mg',
+                                font: { weight: 'bold', size: 14, family: 'Arial' },
+                                color: '#000'
+                            },
+                            min: 0,
+                            max: 100, // Zmniejszono do 100 aby wykres lepiej wypełniał przestrzeń po spadku do ~73
+                            grid: {
+                                display: false
+                            },
+                            border: {
+                                color: '#000',
+                                width: 1
+                            },
+                            ticks: {
+                                stepSize: 20,
+                                color: '#000',
+                                font: { size: 12, weight: 'bold' }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutQuart'
+                    }
+                },
+                plugins: [{
+                    id: 'customLabels',
+                    afterDraw: (chart) => {
+                        const ctx = chart.ctx;
+                        ctx.font = 'bold 16px "Times New Roman"';
+                        ctx.fillStyle = '#800000';
+                        // Ręczne rysowanie etykiet dostosowane do nowej wysokości potencjału (72.8)
+                        ctx.fillText('Produkcja potencjalna', chart.scales.x.getPixelForValue(35), chart.scales.y.getPixelForValue(76));
+                        
+                        ctx.fillStyle = '#4B6CA8';
+                        ctx.fillText('Produkcja rzeczywista', chart.scales.x.getPixelForValue(35), chart.scales.y.getPixelForValue(40));
+                    }
+                }]
+            });
+        });
+    </script>
 
 </body>
 </html>
+
     
 </body>
 </html>
