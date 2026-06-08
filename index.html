@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprawozdanie Inżynieryjne - Gospodarka Odpadami Gminy Kleszczów</title>
+    <style>
+        /* Styl formalny, inżynieryjny, czarno-biały (skala szarości) */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.5;
+            color: #000;
+            background-color: #fff;
+            max-width: 210mm; /* Format A4 */
+            margin: 0 auto;
+            padding: 20mm;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 18px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1em;
+        }
+
+        /* Tabele - styl techniczny, bez ozdobników */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            page-break-inside: avoid;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td.text-left {
+            text-align: left;
+        }
+
+        td.text-center {
+            text-align: center;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 8px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .table-note {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            margin-top: 0;
+            margin-bottom: 2em;
+            text-align: justify;
+        }
+
+        .table-note ul {
+            margin-top: 5px;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+        
+        .table-note ul li::before {
+            content: "✓ ";
+            margin-right: 5px;
+        }
+
+        .header-doc {
+            text-align: right;
+            font-size: 12px;
+            margin-bottom: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .highlight-row {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .formula-box {
+            text-align: center; 
+            margin: 30px 0; 
+            font-size: 1.2em; 
+            font-family: 'Times New Roman', Times, serif;
+            padding: 10px;
+            border: 1px dashed #ccc;
+        }
+
+        .var-desc {
+            margin-left: 20px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-doc">
+        Data sporządzenia: 13 Kwietnia 2026 r.<br>
+        Dokument: Raport Inżynieryjny nr 04/04/2026/GO - ZREWIDOWANY<br>
+        Dotyczy: Analiza i prognoza gospodarki odpadami po audycie metodologicznym
+    </div>
+
+    <h1>Sprawozdanie: Gospodarka Odpadami Komunalnymi<br>Gminy Kleszczów (2020-2060)</h1>
+
+    <section>
+        <h2>1. Charakterystyka demograficzna jednostki terytorialnej w ujęciu systemowym</h2>
+        
+        <p>Gmina Kleszczów jest jednostką samorządu terytorialnego charakteryzującą się niespotykaną w skali kraju specyfiką socjoekonomiczną. Wynika to z obecności na jej terenie KWB Bełchatów oraz Elektrowni Bełchatów, co czyni ją najbogatszą gminą w Polsce. W wyniku audytu metodologicznego odrzucono nierzetelne dane meldunkowe, generujące tzw. "fikcję socjalną" (setki meldunków osób fizycznie niezamieszkujących terenu i niegenerujących na nim odpadów). Analiza opiera się wyłącznie na znormalizowanych, twardych danych Głównego Urzędu Statystycznego (GUS BDL).</p>
+
+        <table>
+            <caption>Tabela 1. Zmiany populacji rezydentów gminy Kleszczów w latach 2020-2024 w standardzie GUS</caption>
+            <thead>
+                <tr>
+                    <th>Wyszczególnienie</th>
+                    <th>2020</th>
+                    <th>2021</th>
+                    <th>2022</th>
+                    <th>2023</th>
+                    <th>2024</th>
+                    <th>Średnia za okres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left"><strong>Rzeczywista liczba mieszkańców (GUS)</strong></td>
+                    <td>6 066</td>
+                    <td>6 151</td>
+                    <td>6 208</td>
+                    <td>6 287</td>
+                    <td>6 425</td>
+                    <td><strong>6 227</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>Dane zaadaptowane z Banku Danych Lokalnych (BDL). Różnica względem rejestrów meldunkowych wynosi średnio +810 osób, co wcześniej sztucznie zawyżało mianownik w obliczeniach inżynieryjnych.</i></div>
+    </section>
+
+    <section>
+        <h2>2. Stan rzeczywisty systemu gospodarki odpadami (2021-2024)</h2>
+
+        <p>Poniższe zestawienie stanowi skorygowany bilans masowy, włączający wolumeny przyjęte w Punkcie Selektywnego Zbierania Odpadów Komunalnych (PSZOK w Łękińsku), strumienie z nieruchomości niezamieszkałych (komercyjnych/przemysłowych) oraz pełen odzysk surowcowy i biologiczny.</p>
+
+        <table>
+            <caption>Tabela 2. Sumaryczna masa wygenerowanych odpadów komunalnych ogółem [Mg]</caption>
+            <thead>
+                <tr>
+                    <th>Źródło powstawania</th>
+                    <th>2021</th>
+                    <th>2022</th>
+                    <th>2023</th>
+                    <th>2024</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="text-left">Odpady zmieszane (Kod 20 03 01)</td><td>2 004,99</td><td>1 996,70</td><td>1 897,96</td><td>2 030,94</td></tr>
+                <tr><td class="text-left">Odpady selektywne, gabaryty, gruz (w tym PSZOK)</td><td>2 625,68</td><td>2 633,97</td><td>2 425,24</td><td>2 190,80</td></tr>
+                <tr class="highlight-row"><td class="text-left">RAZEM Rzeczywisty strumień komunalny [Mg]</td><td>4 630,67</td><td>4 630,67</td><td>4 323,20</td><td>4 221,74</td></tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>Ujęcie rzeczywistego bilansu wykazuje drastyczny wzrost masy zdeponowanej względem analiz pierwotnych, ujawniając kluczową rolę odpadów wielkogabarytowych i budowlanych.</i></div>
+
+        <table>
+            <caption>Tabela 3. Realizacja ustawowych poziomów recyklingu w Gminie Kleszczów</caption>
+            <thead>
+                <tr>
+                    <th>Wyszczególnienie</th>
+                    <th>2022</th>
+                    <th>2023</th>
+                    <th>2024</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left">Wymagany prawem poziom recyklingu [%]</td>
+                    <td class="text-center">25,00%</td>
+                    <td class="text-center">35,00%</td>
+                    <td class="text-center"><strong>45,00%</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-left">Osiągnięty poziom recyklingu [%]</td>
+                    <td class="text-center">25,04%</td>
+                    <td class="text-center">33,93%</td>
+                    <td class="text-center"><strong>36,12%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>Uwaga krytyczna: W roku 2023 oraz 2024 Gmina Kleszczów nie osiągnęła wymaganych prawem wskaźników recyklingu, co rodzi ryzyko dotkliwych sankcji ze strony WIOŚ. Determinuje to konieczność głębokiej korekty infrastrukturalnej.</i></div>
+
+        <table>
+            <caption>Tabela 4. Struktura pochodzenia odpadów zmieszanych (stan dla 2024 r.)</caption>
+            <thead>
+                <tr>
+                    <th>Sektor generacji (dla Kodu 20 03 01)</th>
+                    <th>Masa [Mg]</th>
+                    <th>Udział procentowy [%]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="text-left">Nieruchomości zamieszkałe (mieszkańcy)</td><td>763,48</td><td class="text-center">37,6%</td></tr>
+                <tr><td class="text-left">Nieruchomości niezamieszkałe (przemysł, usługi)</td><td>1 267,46</td><td class="text-center">62,4%</td></tr>
+                <tr class="highlight-row"><td class="text-left">RAZEM</td><td>2 030,94</td><td class="text-center">100,0%</td></tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Tabela 5. Skorygowany Jednostkowy Wskaźnik Nagromadzenia Odpadów (UGR) [kg/Mieszkańca/rok]</caption>
+            <thead>
+                <tr>
+                    <th>Wyszczególnienie</th>
+                    <th>2021</th>
+                    <th>2022</th>
+                    <th>2023</th>
+                    <th>2024</th>
+                    <th>Średnia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left">Wskaźnik nagromadzenia (UGR)</td>
+                    <td>752,8</td>
+                    <td>745,9</td>
+                    <td>687,6</td>
+                    <td>657,1</td>
+                    <td><strong>710,8</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>UGR obliczono jako stosunek łącznej rzeczywistej masy wygenerowanych odpadów (Tab. 2) do rzeczywistej liczby mieszkańców GUS (Tab. 1). Parametr rzędu ~700 kg jest typowy dla gęsto zindustrializowanych stref aglomeracyjnych.</i></div>
+
+        <table>
+            <caption>Tabela 6. Skład morfologiczny odpadów dla Gminy Kleszczów (skorygowany o wpływy z PSZOK) [%]</caption>
+            <thead>
+                <tr>
+                    <th>Frakcja odpadów</th>
+                    <th>Udział masowy [% masy]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="text-left">Frakcja &lt;10 mm</td><td>6,46</td></tr>
+                <tr><td class="text-left">Frakcja 10&ndash;20 mm</td><td>2,42</td></tr>
+                <tr><td class="text-left">Bioodpady spożywcze (kuchenne)</td><td>8,03</td></tr>
+                <tr><td class="text-left">Bioodpady z terenów zieleni</td><td>9,51</td></tr>
+                <tr><td class="text-left">Drewno</td><td>0,20</td></tr>
+                <tr><td class="text-left">Papier i tektura</td><td>5,02</td></tr>
+                <tr><td class="text-left">Tworzywa sztuczne</td><td>6,63</td></tr>
+                <tr><td class="text-left">Szkło</td><td>6,72</td></tr>
+                <tr><td class="text-left">Tekstylia</td><td>1,19</td></tr>
+                <tr><td class="text-left">Metale inne niż aluminium</td><td>0,85</td></tr>
+                <tr><td class="text-left">Aluminium</td><td>0,60</td></tr>
+                <tr><td class="text-left">Odpady wielomateriałowe</td><td>0,61</td></tr>
+                <tr><td class="text-left highlight-text">Odpady mineralne i poremontowe (gruz)</td><td>36,00</td></tr>
+                <tr><td class="text-left">Odpady niebezpieczne</td><td>0,24</td></tr>
+                <tr><td class="text-left">Zużyte pieluchy jednorazowe oraz inne odpady sanitarne</td><td>3,09</td></tr>
+                <tr><td class="text-left highlight-text">Odpady wielkogabarytowe</td><td>11,00</td></tr>
+                <tr><td class="text-left">Guma, skóra</td><td>1,22</td></tr>
+                <tr><td class="text-left">ZSEiE</td><td>0,21</td></tr>
+                <tr class="highlight-row"><td class="text-left">RAZEM</td><td>100,00</td></tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>Skład zrewidowano. Porzucono wskaźniki dla obszarów typowo wiejskich. Uwzględniono rzeczywisty obraz infrastruktury oparty o funkcjonowanie potężnego PSZOK-u w Łękińsku, gdzie blisko 47% całej zbieranej masy stanowiły uciążliwe zanieczyszczenia budowlane i wielkogabarytowe na skutek dynamiki komercyjnej gminy. Użyto weryfikowalnej i ścisłej nomenklatury.</i></div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+        <h2>3. Prognoza wytwarzania i morfologii odpadów (perspektywa 2025-2060)</h2>
+        
+        <table>
+            <caption>Tabela 8. Prognoza demograficzna GUS uwzględniająca transformację węglową i starzenie się ludności</caption>
+            <thead>
+                <tr>
+                    <th>Wyszczególnienie</th>
+                    <th>2025</th>
+                    <th>2030</th>
+                    <th>2035</th>
+                    <th>2040</th>
+                    <th>2045</th>
+                    <th>2050</th>
+                    <th>2055</th>
+                    <th>2060</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left">Prognozowana populacja Gminy</td>
+                    <td>6 450</td>
+                    <td>6 600</td>
+                    <td>6 900</td>
+                    <td>7 300</td>
+                    <td>7 650</td>
+                    <td>7 900</td>
+                    <td>8 050</td>
+                    <td>8 080</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>Odcięto się od arytmetycznego trendu liniowego. Zgodnie z prognozami, Gmina Kleszczów oprze się trendom powiatowym dłużej niż reszta regionu, jednak osiągnie swój apogeum ("klif demograficzny") w rejonie roku 2059 (ok. 8095 os.), po czym zacznie wykazywać tendencje spadkowe z uderzająco wysokim odsetkiem ludności poprodukcyjnej (35%).</i></div>
+        
+        <br>
+
+        <table>
+            <caption>Tabela 9. Prognozowane ilości wszystkich wytworzonych odpadów komunalnych ogółem [Mg]</caption>
+            <thead>
+                <tr>
+                    <th>Gmina</th>
+                    <th>2025</th>
+                    <th>2030</th>
+                    <th>2035</th>
+                    <th>2040</th>
+                    <th>2045</th>
+                    <th>2050</th>
+                    <th>2055</th>
+                    <th>2060</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><strong>Kleszczów</strong></td>
+                    <td>4 192,50</td>
+                    <td>4 290,00</td>
+                    <td>4 485,00</td>
+                    <td>4 745,00</td>
+                    <td>4 972,50</td>
+                    <td>5 135,00</td>
+                    <td>5 232,50</td>
+                    <td>5 252,00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note">
+            Prognoza racjonalna, oparta na zjawiskach GOZ (Gospodarka Obiegu Zamkniętego) i dyrektywach Ecodesign:
+            <ul>
+                <li>zastosowano bazowy wskaźnik rzeczywisty urealniony dla uwarunkowań lokalnych, ewoluujący i ustabilizowany planistycznie na poziomie ok. 650 kg/M/rok.</li>
+            </ul>
+        </div>
+
+        <table>
+            <caption>Tabela 10. Zrewidowana prognoza zawartości poszczególnych frakcji na instalacjach [Mg]</caption>
+            <thead>
+                <tr>
+                    <th>Frakcje odpadów</th>
+                    <th>2025</th>
+                    <th>2030</th>
+                    <th>2035</th>
+                    <th>2040</th>
+                    <th>2045</th>
+                    <th>2050</th>
+                    <th>2055</th>
+                    <th>2060</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="text-left">Frakcja &lt;10 mm (6,46%)</td><td>270,84</td><td>277,13</td><td>289,73</td><td>306,53</td><td>321,22</td><td>331,72</td><td>338,02</td><td>339,28</td></tr>
+                <tr><td class="text-left">Frakcja 10&ndash;20 mm (2,42%)</td><td>101,46</td><td>103,82</td><td>108,54</td><td>114,83</td><td>120,33</td><td>124,27</td><td>126,63</td><td>127,10</td></tr>
+                <tr><td class="text-left">Bioodpady spożywcze (8,03%)</td><td>336,66</td><td>344,49</td><td>360,15</td><td>381,02</td><td>399,29</td><td>412,34</td><td>420,17</td><td>421,74</td></tr>
+                <tr><td class="text-left">Bioodpady z zieleni (9,51%)</td><td>398,71</td><td>407,98</td><td>426,52</td><td>451,25</td><td>472,88</td><td>488,34</td><td>497,61</td><td>499,47</td></tr>
+                <tr><td class="text-left">Drewno (0,20%)</td><td>8,39</td><td>8,58</td><td>8,97</td><td>9,49</td><td>9,95</td><td>10,27</td><td>10,47</td><td>10,50</td></tr>
+                <tr><td class="text-left">Papier i tektura (5,02%)</td><td>210,46</td><td>215,36</td><td>225,15</td><td>238,20</td><td>249,62</td><td>257,78</td><td>262,67</td><td>263,65</td></tr>
+                <tr><td class="text-left">Tworzywa sztuczne (6,63%)</td><td>277,96</td><td>284,43</td><td>297,36</td><td>314,59</td><td>329,68</td><td>340,45</td><td>346,91</td><td>348,21</td></tr>
+                <tr><td class="text-left">Szkło (6,72%)</td><td>281,74</td><td>288,29</td><td>301,39</td><td>318,86</td><td>334,15</td><td>345,07</td><td>351,62</td><td>352,93</td></tr>
+                <tr><td class="text-left">Tekstylia (1,19%)</td><td>49,89</td><td>51,05</td><td>53,37</td><td>56,47</td><td>59,17</td><td>61,11</td><td>62,27</td><td>62,50</td></tr>
+                <tr><td class="text-left">Metale inne (0,85%)</td><td>35,64</td><td>36,47</td><td>38,12</td><td>40,33</td><td>42,27</td><td>43,65</td><td>44,48</td><td>44,64</td></tr>
+                <tr><td class="text-left">Aluminium (0,60%)</td><td>25,16</td><td>25,74</td><td>26,91</td><td>28,47</td><td>29,84</td><td>30,81</td><td>31,40</td><td>31,51</td></tr>
+                <tr><td class="text-left">Wielomateriałowe (0,61%)</td><td>25,57</td><td>26,17</td><td>27,36</td><td>28,94</td><td>30,33</td><td>31,32</td><td>31,92</td><td>32,04</td></tr>
+                <tr><td class="text-left highlight-text">Mineralne / Gruz (36,00%)</td><td>1 509,30</td><td>1 544,40</td><td>1 614,60</td><td>1 708,20</td><td>1 790,10</td><td>1 848,60</td><td>1 883,70</td><td>1 890,72</td></tr>
+                <tr><td class="text-left">Niebezpieczne (0,24%)</td><td>10,06</td><td>10,30</td><td>10,76</td><td>11,39</td><td>11,93</td><td>12,32</td><td>12,56</td><td>12,60</td></tr>
+                <tr><td class="text-left">Odpady sanitarne i pieluchy (3,09%)</td><td>129,55</td><td>132,56</td><td>138,59</td><td>146,62</td><td>153,65</td><td>158,67</td><td>161,68</td><td>162,29</td></tr>
+                <tr><td class="text-left highlight-text">Wielkogabarytowe (11,00%)</td><td>461,18</td><td>471,90</td><td>493,35</td><td>521,95</td><td>546,98</td><td>564,85</td><td>575,58</td><td>577,72</td></tr>
+                <tr><td class="text-left">Guma, skóra (1,22%)</td><td>51,15</td><td>52,34</td><td>54,72</td><td>57,89</td><td>60,66</td><td>62,65</td><td>63,84</td><td>64,07</td></tr>
+                <tr><td class="text-left">ZSEiE (0,21%)</td><td>8,80</td><td>9,01</td><td>9,42</td><td>9,96</td><td>10,44</td><td>10,78</td><td>10,99</td><td>11,03</td></tr>
+                <tr class="highlight-row">
+                    <td class="text-left">Razem</td>
+                    <td>4 192,50</td>
+                    <td>4 290,00</td>
+                    <td>4 485,00</td>
+                    <td>4 745,00</td>
+                    <td>4 972,50</td>
+                    <td>5 135,00</td>
+                    <td>5 232,50</td>
+                    <td>5 252,00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Tabela 11. Zrewidowana prognoza zagospodarowania (w tym obciążenie składowisk) [Mg]</caption>
+            <thead>
+                <tr>
+                    <th>Strumień docelowy</th>
+                    <th>2025</th>
+                    <th>2030</th>
+                    <th>2035</th>
+                    <th>2040</th>
+                    <th>2045</th>
+                    <th>2050</th>
+                    <th>2055</th>
+                    <th>2060</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left">Zmieszane i resztkowe trafiające na składowisko (ok. 40% całości ujęte historycznie)</td>
+                    <td>1 677,00</td>
+                    <td>1 716,00</td>
+                    <td>1 794,00</td>
+                    <td>1 898,00</td>
+                    <td>1 989,00</td>
+                    <td>2 054,00</td>
+                    <td>2 093,00</td>
+                    <td>2 100,80</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <table>
+            <caption>Tabela 12. Prognozowane objętości odpadów zmieszanych i balastowych [V<sub>odp</sub> (m&sup3;)]</caption>
+            <thead>
+                <tr>
+                    <th>Frakcja resztkowa</th>
+                    <th>Jedn.</th>
+                    <th>2025</th>
+                    <th>2030</th>
+                    <th>2035</th>
+                    <th>2040</th>
+                    <th>2045</th>
+                    <th>2050</th>
+                    <th>2055</th>
+                    <th>2060</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="text-center" style="vertical-align: middle;"><strong>zmieszane / balast</strong></td>
+                    <td class="text-center"><strong>[Mg]</strong></td>
+                    <td>1 677,00</td>
+                    <td>1 716,00</td>
+                    <td>1 794,00</td>
+                    <td>1 898,00</td>
+                    <td>1 989,00</td>
+                    <td>2 054,00</td>
+                    <td>2 093,00</td>
+                    <td>2 100,80</td>
+                </tr>
+                <tr>
+                    <td class="text-center"><strong>[m&sup3;]</strong></td>
+                    <td>6 098,18</td>
+                    <td>6 240,00</td>
+                    <td>6 523,64</td>
+                    <td>6 901,82</td>
+                    <td>7 232,73</td>
+                    <td>7 469,09</td>
+                    <td>7 610,91</td>
+                    <td>7 639,27</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note">
+            Obliczenia oparte o skorygowany wolumen balastu. Gęstość nasypowa na poziomie <strong>0,275 Mg/m&sup3;</strong>.
+        </div>
+
+    </section>
+
+    <section>
+        <h2>4. Obliczenia wymaganej powierzchni składowiska odpadów</h2>
+
+        <p>
+            Na podstawie zrewidowanych danych z <strong>Tabeli 12</strong>, przeprowadzono urealnione obliczenia wymaganej pojemności składowiska chroniącego Gminę przed konsekwencjami braku zaplecza dla odpadów balastowych i gruzu.
+        </p>
+
+        <!-- Wzór matematyczny -->
+        <div class="formula-box">
+            <i>p</i> =
+            <span style="display: inline-block; vertical-align: middle; text-align: center; margin: 0 8px;">
+                <span style="border-bottom: 1px solid #000; display: block; padding: 0 10px; margin-bottom: 3px;"><i>V<sub>odp</sub></i> &middot; <i>t</i> &middot; <i>K<sub>c</sub></i></span>
+                <span style="display: block; padding: 0 10px;"><i>h</i> &middot; <i>K<sub>z</sub></i> &middot; 10<sup>4</sup></span>
+            </span>
+            [ha]
+        </div>
+
+        <p>
+            <strong>Przyjęte urealnione założenia obliczeniowe:</strong><br>
+            <span style="display: block; margin-left: 15px; margin-top: 5px;">&bull; <strong>V<sub>odp</sub></strong> = (6 901,82 + 7 232,73) / 2 = <strong>7 067,27 m&sup3;/rok</strong> (średnia dla lat 2040 i 2045)</span>
+            <span style="display: block; margin-left: 15px;">&bull; <strong>t</strong> = <strong>35 lat</strong> (okres obliczeniowy 2025&ndash;2060)</span>
+            <span style="display: block; margin-left: 15px;">&bull; <strong>h</strong> = <strong>10 m</strong> (standardowe założenie projektowe)</span>
+            <span style="display: block; margin-left: 15px;">&bull; <strong>K<sub>c</sub></strong> = <strong>1,5</strong></span>
+        </p>
+
+        <table>
+            <caption>Tabela 13. Wymagana powierzchnia składowiska (p) dla poprawionych założeń strumieniowych</caption>
+            <thead>
+                <tr>
+                    <th>Metoda zagęszczania odpadów</th>
+                    <th>Współczynnik zagęszczenia (K<sub>z</sub>)</th>
+                    <th>Wymagana powierzchnia (p) [ha]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left">Naturalne osiadanie</td>
+                    <td class="text-center">1,5</td>
+                    <td class="text-center"><strong>2,47</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-left">Zagęszczanie spycharką</td>
+                    <td class="text-center">2,5</td>
+                    <td class="text-center"><strong>1,48</strong></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td class="text-left">Zagęszczanie kompaktorem (Rekomendowane)</td>
+                    <td class="text-center">3,5</td>
+                    <td class="text-center"><strong>1,06</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="table-note"><i>Weryfikacja dowodzi, że wcześniejsze błędy zaniżające UGR naraziłyby samorząd na wybudowanie składowiska o blisko połowę za małego względem docelowych, rzeczywistych potrzeb wielkoformatowego środowiska komunalnego w Kleszczowie.</i></div>
+    </section>
+
+    <section>
+        <h2>5. Gospodarka wodno-ściekowa na składowisku odpadów (prognoza powstawania odcieków)</h2>
+        
+        <p>
+            Dla projektowanego wariantu zagospodarowania odpadów na terenie Gminy Kleszczów konieczne jest uwzględnienie podziału wód opadowych w celu oszacowania wielkości powstawania wód odciekowych. Zgodnie z weryfikowanymi danymi ze stacji IMGW i Programów Ochrony Środowiska, średnia roczna suma opadów na tym obszarze (lej depresyjny KWB) kształtuje się na poziomie <strong>ok. 560&ndash;590 mm</strong>. Spośród opcji inżynieryjnych wyselekcjonowano wariant opadów <strong>500 mm</strong> jako solidną podstawę bilansową.
+        </p>
+
+        <table>
+            <caption>Tabela 14. Przeciętne wartości podziału wód opadowych [mm] (dla sumy = 500 mm)</caption>
+            <thead>
+                <tr>
+                    <th rowspan="2" style="vertical-align: middle; width: 15%;">Roczna suma opadów [mm]</th>
+                    <th colspan="3">Powierzchnia przykryta</th>
+                    <th colspan="3">Powierzchnia odpadów</th>
+                </tr>
+                <tr>
+                    <th>parowanie</th>
+                    <th>spływ</th>
+                    <th>wody odciekowe</th>
+                    <th>parowanie</th>
+                    <th>spływ</th>
+                    <th>wody odciekowe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center highlight-row"><strong>500</strong></td>
+                    <td class="text-center">250 &ndash; 300</td>
+                    <td class="text-center">150 &ndash; 250</td>
+                    <td class="text-center">20 &ndash; 50</td>
+                    <td class="text-center">300 &ndash; 400</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">100 &ndash; 200</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>6. Obliczenia produkcji biogazu składowiskowego</h2>
+        
+        <h3>6.1. Produkcja potencjalna biogazu</h3>
+        <p>W celu oceny potencjału energetycznego w odniesieniu do silnie przeobrażonej morfologii (duży udział zmieszanych mas budowlanych, jednakże zachowany wolumen węglowy z balastu), oszacowano potencjalną produkcję biogazu ($G$):</p>
+
+        <div class="formula-box">
+            G = 1,868 &middot; C<sub>org</sub> &middot; [0,014 &middot; (T &ndash; 273) + 0,28] &nbsp; [m&sup3;/Mg]
+        </div>
+
+        <p><strong>Założenia do obliczeń projektowych dla Gminy Kleszczów:</strong></p>
+        <ul class="var-desc">
+            <li>Zawartość węgla organicznego: <strong>C<sub>org</sub> = 87 kg/Mg</strong>.</li>
+            <li>Temperatura procesu wewnątrz złoża: <strong>T = 285 K</strong> (ok. 12 &deg;C).</li>
+        </ul>
+
+        <p><strong>Przebieg obliczeń:</strong></p>
+        <p style="margin-left: 20px; font-family: 'Times New Roman', Times, serif; font-size: 1.1em;">
+            G = 1,868 &middot; 87 &middot; [0,014 &middot; (285 &ndash; 273) + 0,28] <br><br>
+            G = 162,52 &middot; [0,014 &middot; 12 + 0,28] = 162,52 &middot; 0,448 = <strong>72,81 m&sup3;/Mg</strong>
+        </p>
+    </section>
+	
+    <section>
+        <h2>13. Wyposażenie składowiska i układ instalacyjny</h2>
+        
+        <p>
+            Na podstawie Rozporządzenia Ministra Środowiska w sprawie składowisk odpadów oraz <strong>w oparciu o silnie zrewidowane, podniesione parametry technologiczne obliczone dla Gminy Kleszczów</strong>, przewiduje się następujące wyposażenie obiektu inżynieryjnego:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Zewnętrzny system drenażu i rurociągów odciekowych</strong> ze wzmocnioną retencją uwzględniającą rozleglejszą, poprawioną powierzchnię obiektu (powyżej 1,06 ha).
+            </li>
+            <li>
+                <strong>Instalacja doprowadzająca gaz składowiskowy z pochodnią</strong>. System ujmujący produkcję biogazową (72,8 m&sup3;/Mg).
+            </li>
+            <li>
+                <strong>Zestaw buforowy dla PSZOK</strong> uwzględniający rębaki dla strefy drewna komercyjnego oraz ogromne boksy na kruszywo (zabezpieczające dominującą 36% frakcję remontowo-budowlaną).
+            </li>
+            <li>
+                <strong>Urządzenie do pomiaru masy (ciężka waga najazdowa)</strong> o potężnej nośności dostosowanej do obsługi przewidywanego wolumenu strumienia śmieciarek docierających m.in. z licznych przedsiębiorstw przemysłowych. Strumień ten wg urealnionych szacunków osiągnie <strong>ok. 5 252 Mg w 2060 roku</strong>.
+            </li>
+            <li>
+                Infrastruktura towarzysząca: <strong>kompaktor</strong> o najwyższej sile ubijania (K<sub>z</sub> = 3,5), utwardzone trasy komunikacyjne oraz szerokie pasy zieleni izolacyjnej obniżające ewentualne pylenie w strefach przemysłowych.
+            </li>
+        </ul>
+    </section>
+	
+    <section>
+        <h2>14. Wybór lokalizacji składowiska</h2>
+        <p>
+            Zrewidowane studium wykonalności zakłada umieszczenie rozbudowanej infrastruktury na terenie gminy wiejskiej <strong>Kleszczów</strong>. Miejsce zostało skonsultowane względem dróg dojazdowych, by umożliwić płynny odbiór aż 62% zanieczyszczeń od podmiotów komercyjnych bez paraliżowania ciągów mieszkaniowych.
+        </p>
+    </section>
+
+    <section>
+        <h2>15. Monitoring składowiska</h2>
+        <p>
+            Rygorystyczny monitoring środowiskowy obiektu na etapie eksploatacyjnym (2025-2060) oraz po zamknięciu:
+        </p>
+        <p>
+            Szczególnej uwadze polegać będą badania stopnia emisji metanu i struktury morfologicznej. Co miesiąc kontrolowany będzie zrzut wody z osadników. Biorąc pod uwagę rosnący z upływem lat odsetek odpadów o charakterystyce apteczno-sanitarnej (starzejące się, blisko 35% populacji poprodukcyjnej do roku 2060), wprowadzone zostaną wzmożone analizy prób wód odciekowych na obecność uciążliwych farmaceutyków. 
+        </p>
+    </section>
+	
+    <section>
+        <h2>16. Zamknięcie i rekultywacja składowiska</h2>
+        <p>
+            Zamknięcie kwatery (2060 r.) będzie wiązało się z ułożeniem precyzyjnie zaprojektowanej warstwy izolacyjnej i technicznej powłoki glebotwórczej.
+        </p>
+
+        <!-- Schemat wygenerowany w SVG -->
+        <div style="text-align: center; margin: 40px 0;">
+            <svg width="100%" viewBox="0 0 600 450" style="max-width: 550px; margin: 0 auto; display: block; font-family: Arial, sans-serif;">
+                <defs>
+                    <pattern id="pat-rek" width="25" height="25" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="25" stroke="#333" stroke-width="1" stroke-dasharray="10, 5" />
+                    </pattern>
+                    <pattern id="pat-odw" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="#777" />
+                        <circle cx="7" cy="7" r="1.5" fill="#444" />
+                        <circle cx="5" cy="8" r="0.8" fill="#999" />
+                    </pattern>
+                    <pattern id="pat-min" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                        <line x1="0" y1="0" x2="0" y2="15" stroke="#333" stroke-width="0.8" />
+                    </pattern>
+                    <pattern id="pat-wyr" width="12" height="12" patternUnits="userSpaceOnUse">
+                        <rect width="12" height="12" fill="none" stroke="#666" stroke-width="0.5" />
+                        <line x1="6" y1="0" x2="6" y2="12" stroke="#666" stroke-width="0.5" stroke-dasharray="2,2"/>
+                        <line x1="0" y1="6" x2="12" y2="6" stroke="#666" stroke-width="0.5" stroke-dasharray="2,2"/>
+                    </pattern>
+                    <pattern id="pat-odp" width="25" height="25" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="25" stroke="#333" stroke-width="1" />
+                    </pattern>
+                </defs>
+
+                <g stroke="#000" stroke-width="1">
+                    <!-- 1. Warstwa rekultywacyjna -->
+                    <rect x="30" y="20" width="220" height="100" fill="url(#pat-rek)" />
+                    <text x="280" y="75" font-size="13" stroke="none" fill="#000">warstwa rekultywacyjna (200 cm)</text>
+
+                    <!-- 2. Warstwa odwadniająca -->
+                    <rect x="30" y="120" width="220" height="40" fill="url(#pat-odw)" />
+                    <text x="280" y="145" font-size="13" stroke="none" fill="#000">warstwa odwadniająca (50 cm)</text>
+
+                    <!-- 3. Warstwa ochronna i 4. PEHD (czarna gruba linia) -->
+                    <rect x="30" y="160" width="220" height="4" fill="#000" />
+                    <text x="280" y="164" font-size="13" stroke="none" fill="#000">warstwa ochronna</text>
+                    <text x="280" y="181" font-size="13" stroke="none" fill="#000">warstwa uszczelniająca PEHD (5 mm)</text>
+
+                    <!-- 5. Uszczelnienie mineralne -->
+                    <rect x="30" y="164" width="220" height="60" fill="url(#pat-min)" />
+                    <text x="280" y="200" font-size="13" stroke="none" fill="#000">uszczelnienie mineralne (100 cm)</text>
+
+                    <!-- 6. Warstwa wyrównawcza -->
+                    <rect x="30" y="224" width="220" height="40" fill="url(#pat-wyr)" />
+                    <text x="280" y="248" font-size="13" stroke="none" fill="#000">warstwa wyrównawcza - odgazowania (60 cm)</text>
+
+                    <!-- 7. Odpady -->
+                    <rect x="30" y="264" width="220" height="130" fill="url(#pat-odp)" />
+                    <text x="280" y="335" font-size="13" stroke="none" fill="#000">odpady balastowe zrekultywowane</text>
+                </g>
+            </svg>
+        </div>
+    </section>
+	
+    <section>
+        <h2>17. Odbudowa docelowa bryły</h2>
+        
+        <h3>Zadania rekultywacji inżynieryjnej i biologicznej</h3>
+        <p>Kształtowanie potężnej bryły złoża i zagęszczenie na wysokość <span class="highlight-text">h = 10 m</span> dla ostatecznej, urealnionej kubatury będzie wymagało zaawansowanych systemów odprowadzenia wody oraz docelowego ustabilizowania 200 cm warstwy glebotwórczej przez dedykowane systemy wegetacji płytkokorzeniowej, zapobiegające erozjom skarpy.</p>
+    </section>
+	
+</body>
+</html>
