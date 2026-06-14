@@ -675,7 +675,7 @@
     </section>
 	
     <section>
-        <h2>5. Uszczelnienie podłoża składowiska</h2>
+        <h2>18. Uszczelnienie podłoża składowiska</h2>
         <p>
             W celu rygorystycznego zabezpieczenia wód podziemnych i gruntu przed migracją toksycznych odcieków (których prognozowaną ilość wyznaczono w oparciu o opady roczne rzędu 500 mm właściwe dla rejonu Gminy Kleszczów), zgodnie z Rozporządzeniem Ministra Środowiska z dnia 30 kwietnia 2013 r. w sprawie składowisk odpadów (Dz. U. 2013 poz. 523, z późn. zm.) dla składowisk innych niż niebezpieczne i obojętne, zaprojektowano wielobarierowy system uszczelnienia dna i skarp kwatery.
         </p>
@@ -691,8 +691,8 @@
         </ul>
 
         <div style="text-align: center; margin: 40px 0;">
-            <!-- Schemat wektorowy przekroju dna składowiska -->
-            <svg width="100%" viewBox="0 0 650 360" style="max-width: 650px; margin: 0 auto; display: block; font-family: Arial, sans-serif;">
+            <!-- Schemat wektorowy przekroju dna składowiska (wersja czarno-biała) -->
+            <svg width="100%" viewBox="0 0 650 360" style="max-width: 650px; margin: 0 auto; display: block; font-family: Arial, sans-serif; filter: grayscale(100%); -webkit-filter: grayscale(100%);">
                 <defs>
                     <pattern id="pat-odp-dna" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
                         <line x1="0" y1="0" x2="0" y2="15" stroke="#666" stroke-width="1" />
@@ -728,7 +728,7 @@
                     <text x="320" y="55" font-size="13" stroke="none" fill="#000">odpady (kwatera robocza)</text>
 
                     <!-- Warstwa drenażowa ze żwirem i rurami -->
-                    <rect x="80" y="80" width="220" height="60" fill="#f0ebdb" stroke="none"/>
+                    <rect x="80" y="80" width="220" height="60" fill="#f2f2f2" stroke="none"/>
                     <rect x="80" y="80" width="220" height="60" fill="url(#pat-zwir-dna)" />
                     <circle cx="120" cy="110" r="10" fill="#fff" stroke="#000" stroke-width="1.5"/>
                     <circle cx="190" cy="110" r="10" fill="#fff" stroke="#000" stroke-width="1.5"/>
@@ -745,13 +745,13 @@
                     <text x="320" y="162" font-size="13" stroke="none" fill="#000">geomembrana PEHD (2,0 mm)</text>
 
                     <!-- Sztuczna bariera geologiczna -->
-                    <rect x="80" y="152" width="220" height="100" fill="#d9c2a3" stroke="none" />
+                    <rect x="80" y="152" width="220" height="100" fill="#e6e6e6" stroke="none" />
                     <rect x="80" y="152" width="220" height="100" fill="url(#pat-glina-dna)" />
                     <text x="320" y="195" font-size="13" stroke="none" fill="#000">sztuczna bariera geologiczna:</text>
                     <text x="320" y="212" font-size="13" stroke="none" fill="#000">glina zagęszczona, k ≤ 10&strut;⁻⁹ m/s (≥ 1,0 m)</text>
 
                     <!-- Podłoże gruntowe rodzime -->
-                    <rect x="80" y="252" width="220" height="80" fill="#c2b280" fill-opacity="0.5" stroke="none" />
+                    <rect x="80" y="252" width="220" height="80" fill="#cccccc" fill-opacity="0.5" stroke="none" />
                     <rect x="80" y="252" width="220" height="80" fill="url(#pat-grunt-dna)" />
                     <text x="320" y="295" font-size="13" stroke="none" fill="#000">podłoże gruntowe rodzime</text>
                     
@@ -862,7 +862,7 @@
     </section>
 	
     <section>
-        <h2>14. Wybór lokalizacji składowiska</h2>
+        <h2>9. Wybór lokalizacji składowiska</h2>
         <p>
             Na podstawie wymagań zawartych w Rozporządzeniu, składowisko zostało zlokalizowane na obszarze gminy wiejskiej <strong>Kleszczów</strong>. 
             Poniżej przedstawiono podgląd proponowanej lokalizacji inwestycji na mapie poglądowej.
@@ -872,8 +872,8 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         
-        <!-- Kontener na mapę -->
-        <div id="map" style="height: 350px; width: 100%; border: 1px solid #000; margin: 20px 0; z-index: 1;"></div>
+        <!-- Kontener na mapę z dodanym filtrem czarno-białym -->
+        <div id="map" style="height: 350px; width: 100%; border: 1px solid #000; margin: 20px 0; z-index: 1; filter: grayscale(100%); -webkit-filter: grayscale(100%);"></div>
         
         <!-- Skrypt inicjalizujący mapę i pinezkę -->
         <script>
