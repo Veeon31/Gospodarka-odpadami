@@ -673,9 +673,109 @@
             </tbody>
         </table>
     </section>
+	
+    <section>
+        <h2>5. Uszczelnienie podłoża składowiska</h2>
+        <p>
+            W celu rygorystycznego zabezpieczenia wód podziemnych i gruntu przed migracją toksycznych odcieków (których prognozowaną ilość wyznaczono w oparciu o opady roczne rzędu 500 mm właściwe dla rejonu Gminy Kleszczów), zgodnie z Rozporządzeniem Ministra Środowiska z dnia 30 kwietnia 2013 r. w sprawie składowisk odpadów (Dz. U. 2013 poz. 523, z późn. zm.) dla składowisk innych niż niebezpieczne i obojętne, zaprojektowano wielobarierowy system uszczelnienia dna i skarp kwatery.
+        </p>
+        <p>
+            Układ docelowych warstw zabezpieczających (licząc od dołu ku powierzchni kwatery) przedstawia się następująco:
+        </p>
+
+        <ul>
+            <li><strong>Sztuczna bariera geologiczna</strong> – zagęszczona warstwa gruntów spoistych (glina) o miąższości min. 1,0 m i udokumentowanym współczynniku filtracji k &le; 10&strut;⁻⁹ m/s. Będzie stanowić kluczowe i długotrwałe zabezpieczenie hydrogeologiczne kwatery.</li>
+            <li><strong>Bariera syntetyczna (geomembrana)</strong> – nieprzepuszczalna folia PEHD o grubości 2,0 mm, zgrzewana podwójnym szwem.</li>
+            <li><strong>Warstwa ochronna</strong> – gruba geowłóknina (min. 500 g/m&sup2;) chroniąca geomembranę PEHD przed przebiciem mechanicznym (co jest szczególnie istotne przy zakładanym obciążeniu przez złoże oraz pracę sprzętu takiego jak kompaktor).</li>
+            <li><strong>Warstwa drenażowa</strong> – żwir płukany o uziarnieniu 16/32 mm układany na grubość min. 0,5 m, z poprowadzonym wewnątrz układem perforowanych rur drenażowych. Jej zadaniem jest sprawne zbieranie i odprowadzanie odcieków do zakładowej oczyszczalni / zbiornika retencyjnego.</li>
+        </ul>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <!-- Schemat wektorowy przekroju dna składowiska -->
+            <svg width="100%" viewBox="0 0 650 360" style="max-width: 650px; margin: 0 auto; display: block; font-family: Arial, sans-serif;">
+                <defs>
+                    <pattern id="pat-odp-dna" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="15" stroke="#666" stroke-width="1" />
+                        <line x1="0" y1="0" x2="15" y2="0" stroke="#666" stroke-width="1" />
+                    </pattern>
+                    <pattern id="pat-zwir-dna" width="12" height="12" patternUnits="userSpaceOnUse">
+                        <circle cx="3" cy="3" r="1.5" fill="#888" />
+                        <circle cx="9" cy="8" r="1" fill="#555" />
+                        <circle cx="3" cy="10" r="0.8" fill="#aaa" />
+                        <circle cx="7" cy="4" r="1.2" fill="#777" />
+                    </pattern>
+                    <pattern id="pat-geo-dna" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="6" stroke="#555" stroke-width="1" />
+                        <line x1="0" y1="0" x2="6" y2="0" stroke="#555" stroke-width="1" />
+                    </pattern>
+                    <pattern id="pat-glina-dna" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="15" stroke="#555" stroke-width="0.8" />
+                    </pattern>
+                    <pattern id="pat-grunt-dna" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                        <line x1="0" y1="0" x2="0" y2="20" stroke="#666" stroke-width="1.2" />
+                    </pattern>
+                    <marker id="arrow-st" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                        <path d="M6,0 L0,3 L6,6 Z" fill="#000" />
+                    </marker>
+                    <marker id="arrow-en" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                        <path d="M0,0 L6,3 L0,6 Z" fill="#000" />
+                    </marker>
+                </defs>
+
+                <g stroke="#000" stroke-width="1">
+                    <!-- Odpady -->
+                    <rect x="80" y="20" width="220" height="60" fill="url(#pat-odp-dna)" />
+                    <text x="320" y="55" font-size="13" stroke="none" fill="#000">odpady (kwatera robocza)</text>
+
+                    <!-- Warstwa drenażowa ze żwirem i rurami -->
+                    <rect x="80" y="80" width="220" height="60" fill="#f0ebdb" stroke="none"/>
+                    <rect x="80" y="80" width="220" height="60" fill="url(#pat-zwir-dna)" />
+                    <circle cx="120" cy="110" r="10" fill="#fff" stroke="#000" stroke-width="1.5"/>
+                    <circle cx="190" cy="110" r="10" fill="#fff" stroke="#000" stroke-width="1.5"/>
+                    <circle cx="260" cy="110" r="10" fill="#fff" stroke="#000" stroke-width="1.5"/>
+                    <text x="320" y="105" font-size="13" stroke="none" fill="#000">warstwa drenażowa: żwir 16/32 mm</text>
+                    <text x="320" y="122" font-size="13" stroke="none" fill="#000">z rurami drenażowymi PEHD (0,5 m)</text>
+
+                    <!-- Geowłóknina ochronna -->
+                    <rect x="80" y="140" width="220" height="8" fill="url(#pat-geo-dna)" />
+                    <text x="320" y="147" font-size="13" stroke="none" fill="#000">geowłóknina ochronna (≥ 500 g/m&sup2;)</text>
+
+                    <!-- Geomembrana PEHD -->
+                    <rect x="80" y="148" width="220" height="4" fill="#000" />
+                    <text x="320" y="162" font-size="13" stroke="none" fill="#000">geomembrana PEHD (2,0 mm)</text>
+
+                    <!-- Sztuczna bariera geologiczna -->
+                    <rect x="80" y="152" width="220" height="100" fill="#d9c2a3" stroke="none" />
+                    <rect x="80" y="152" width="220" height="100" fill="url(#pat-glina-dna)" />
+                    <text x="320" y="195" font-size="13" stroke="none" fill="#000">sztuczna bariera geologiczna:</text>
+                    <text x="320" y="212" font-size="13" stroke="none" fill="#000">glina zagęszczona, k ≤ 10&strut;⁻⁹ m/s (≥ 1,0 m)</text>
+
+                    <!-- Podłoże gruntowe rodzime -->
+                    <rect x="80" y="252" width="220" height="80" fill="#c2b280" fill-opacity="0.5" stroke="none" />
+                    <rect x="80" y="252" width="220" height="80" fill="url(#pat-grunt-dna)" />
+                    <text x="320" y="295" font-size="13" stroke="none" fill="#000">podłoże gruntowe rodzime</text>
+                    
+                    <!-- Osie wymiarowe po lewej stronie -->
+                    <line x1="60" y1="80" x2="60" y2="140" stroke="#000" stroke-width="1" marker-start="url(#arrow-st)" marker-end="url(#arrow-en)"/>
+                    <text x="45" y="110" font-size="11" stroke="none" fill="#000" transform="rotate(-90 45,110)" text-anchor="middle">0,5 m</text>
+                    
+                    <line x1="60" y1="140" x2="60" y2="152" stroke="#000" stroke-width="1" marker-start="url(#arrow-st)" marker-end="url(#arrow-en)"/>
+                    <text x="45" y="146" font-size="11" stroke="none" fill="#000" transform="rotate(-90 45,146)" text-anchor="middle">2 mm</text>
+                    
+                    <line x1="60" y1="152" x2="60" y2="252" stroke="#000" stroke-width="1" marker-start="url(#arrow-st)" marker-end="url(#arrow-en)"/>
+                    <text x="45" y="202" font-size="11" stroke="none" fill="#000" transform="rotate(-90 45,202)" text-anchor="middle">1,0 m</text>
+
+                    <!-- Strzałki pokazujące kontynuację w górę i w dół -->
+                    <line x1="60" y1="20" x2="60" y2="80" stroke="#000" stroke-width="1" marker-end="url(#arrow-en)"/>
+                    <line x1="60" y1="332" x2="60" y2="252" stroke="#000" stroke-width="1" marker-end="url(#arrow-en)"/>
+                </g>
+            </svg>
+            <p style="font-size: 12px; font-weight: bold; margin-top: 15px;">Rysunek 2. Przekrój przez wielobarierowe uszczelnienie dna składowiska Gminy Kleszczów.</p>
+        </div>
+    </section>
 
     <section>
-        <h2>5. Gospodarka wodno-ściekowa na składowisku odpadów (prognoza powstawania odcieków)</h2>
+        <h2>6. Gospodarka wodno-ściekowa na składowisku odpadów (prognoza powstawania odcieków)</h2>
         
         <p>
             Dla projektowanego wariantu zagospodarowania odpadów na terenie Gminy Kleszczów konieczne jest uwzględnienie podziału wód opadowych w celu oszacowania wielkości powstawania wód odciekowych. Zgodnie z weryfikowanymi danymi ze stacji IMGW i Programów Ochrony Środowiska, średnia roczna suma opadów na tym obszarze (lej depresyjny KWB) kształtuje się na poziomie <strong>ok. 560&ndash;590 mm</strong>. Spośród opcji inżynieryjnych wyselekcjonowano wariant opadów <strong>500 mm</strong> jako solidną podstawę bilansową.
@@ -713,9 +813,9 @@
     </section>
 
     <section>
-        <h2>6. Obliczenia produkcji biogazu składowiskowego</h2>
+        <h2>7. Obliczenia produkcji biogazu składowiskowego</h2>
         
-        <h3>6.1. Produkcja potencjalna biogazu</h3>
+        <h3>7.1. Produkcja potencjalna biogazu</h3>
         <p>W celu oceny potencjału energetycznego w odniesieniu do silnie przeobrażonej morfologii (duży udział zmieszanych mas budowlanych, jednakże zachowany wolumen węglowy z balastu), oszacowano potencjalną produkcję biogazu ($G$):</p>
 
         <div class="formula-box">
@@ -736,7 +836,7 @@
     </section>
 	
     <section>
-        <h2>7. Wyposażenie składowiska i układ instalacyjny</h2>
+        <h2>8. Wyposażenie składowiska i układ instalacyjny</h2>
         
         <p>
             Na podstawie Rozporządzenia Ministra Środowiska w sprawie składowisk odpadów oraz <strong>w oparciu o silnie zrewidowane, podniesione parametry technologiczne obliczone dla Gminy Kleszczów</strong>, przewiduje się następujące wyposażenie obiektu inżynieryjnego:
@@ -762,14 +862,14 @@
     </section>
 	
     <section>
-        <h2>8. Wybór lokalizacji składowiska</h2>
+        <h2>9. Wybór lokalizacji składowiska</h2>
         <p>
             Zrewidowane studium wykonalności zakłada umieszczenie rozbudowanej infrastruktury na terenie gminy wiejskiej <strong>Kleszczów</strong>. Miejsce zostało skonsultowane względem dróg dojazdowych, by umożliwić płynny odbiór aż 62% zanieczyszczeń od podmiotów komercyjnych bez paraliżowania ciągów mieszkaniowych.
         </p>
     </section>
 
     <section>
-        <h2>9. Monitoring składowiska</h2>
+        <h2>10. Monitoring składowiska</h2>
         <p>
             Rygorystyczny monitoring środowiskowy obiektu na etapie eksploatacyjnym (2025-2060) oraz po zamknięciu:
         </p>
@@ -779,7 +879,7 @@
     </section>
 	
     <section>
-        <h2>10. Zamknięcie i rekultywacja składowiska</h2>
+        <h2>11. Zamknięcie i rekultywacja składowiska</h2>
         <p>
             Zamknięcie kwatery (2060 r.) będzie wiązało się z ułożeniem precyzyjnie zaprojektowanej warstwy izolacyjnej i technicznej powłoki glebotwórczej.
         </p>
@@ -842,7 +942,7 @@
     </section>
 	
     <section>
-        <h2>11. Odbudowa docelowa bryły</h2>
+        <h2>12. Odbudowa docelowa bryły</h2>
         
         <h3>Zadania rekultywacji inżynieryjnej i biologicznej</h3>
         <p>Kształtowanie bryły złoża i zagęszczenie na wysokość <span class="highlight-text">h = 10 m</span> dla ostatecznej, urealnionej kubatury będzie wymagało zaawansowanych systemów odprowadzenia wody oraz docelowego ustabilizowania 200 cm warstwy glebotwórczej przez dedykowane systemy wegetacji płytkokorzeniowej, zapobiegające erozjom skarpy.</p>
