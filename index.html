@@ -862,9 +862,43 @@
     </section>
 	
     <section>
-        <h2>9. Wybór lokalizacji składowiska</h2>
+        <h2>14. Wybór lokalizacji składowiska</h2>
         <p>
-            Zrewidowane studium wykonalności zakłada umieszczenie rozbudowanej infrastruktury na terenie gminy wiejskiej <strong>Kleszczów</strong>. Miejsce zostało skonsultowane względem dróg dojazdowych, by umożliwić płynny odbiór aż 62% zanieczyszczeń od podmiotów komercyjnych bez paraliżowania ciągów mieszkaniowych.
+            Na podstawie wymagań zawartych w Rozporządzeniu, składowisko zostało zlokalizowane na obszarze gminy wiejskiej <strong>Kleszczów</strong>. 
+            Poniżej przedstawiono podgląd proponowanej lokalizacji inwestycji na mapie poglądowej.
+        </p>
+
+        <!-- Dołączenie stylów i skryptów biblioteki Leaflet do obsługi mapy -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        
+        <!-- Kontener na mapę -->
+        <div id="map" style="height: 350px; width: 100%; border: 1px solid #000; margin: 20px 0; z-index: 1;"></div>
+        
+        <!-- Skrypt inicjalizujący mapę i pinezkę -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Współrzędne dla gminy Kleszczów (rejon stref przemysłowych)
+                var lat = 51.223;
+                var lng = 19.303;
+                
+                // Inicjalizacja mapy
+                var map = L.map('map').setView([lat, lng], 12);
+
+                // Dodanie warstwy graficznej z OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; autorzy <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                // Dodanie pinezki (znacznika) z dymkiem informacyjnym
+                L.marker([lat, lng]).addTo(map)
+                    .bindPopup('<b>Proponowana lokalizacja</b><br>Projektowane składowisko - Gmina Kleszczów')
+                    .openPopup();
+            });
+        </script>
+
+        <p>
+            <i></i>
         </p>
     </section>
 
